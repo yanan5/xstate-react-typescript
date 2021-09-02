@@ -1,6 +1,6 @@
-import { createMachine, assign, EventObject } from "xstate";
+import { Machine, assign } from "xstate";
 
-const ToggleMachine = createMachine(
+const ToggleMachine = Machine(
   {
     id: "ToggleMachine",
     initial: "OFF",
@@ -31,7 +31,7 @@ const ToggleMachine = createMachine(
       setValue: assign({
         isXstateAwesome: (context, event) => {
           console.log(context, event);
-          return (event as EventObject).data;
+          return event.data;
         }
       })
     }
