@@ -9,11 +9,12 @@ export default function App() {
     <div className="App">
       <h1>Hello CodeSandbox</h1>
       <h2>Start editing to see some magic happen!</h2>
+      <label htmlFor="isXstateAwesome">isXstateAwesome</label>
       <input
+        id="isXstateAwesome"
         type="checkbox"
-        value="Selected"
         checked={machine.matches("ON")}
-        onChange={(e) => send("TOGGLE", { data: e.target.value })}
+        onChange={(e) => send("TOGGLE", { data: e.target.checked })}
       />
     </div>
   );
